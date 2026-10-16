@@ -75,6 +75,8 @@ export default async function ProjectPage({
               <a
                 className="button"
                 href={"https://github.com/edisonlovescodes/" + p.repo}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Source code & local setup ↗
               </a>

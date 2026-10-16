@@ -7,13 +7,35 @@ export default function Navigation() {
       </a>
       <header className="navigation">
         <a className="wordmark" href="/">
-          Edison<span>.dev</span>
-          <i aria-hidden="true">_</i>
+          byedison<span>.com</span>
         </a>
         <nav aria-label="Main navigation">
           <a href="/#projects">Projects</a>
-          <a href="/#experience">Experience</a>
-          <a className="nav-resume" href="/Edison_Essien_Resume.pdf">
+          <a className="nav-experience" href="/#experience">
+            Experience
+          </a>
+          <a
+            className="nav-social"
+            href="https://github.com/edisonlovescodes"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub ↗
+          </a>
+          <a
+            className="nav-social"
+            href="https://www.linkedin.com/in/edisonessien"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn ↗
+          </a>
+          <a
+            className="nav-resume"
+            href="/Edison_Essien_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Resume ↗
           </a>
           <ThemeToggle />

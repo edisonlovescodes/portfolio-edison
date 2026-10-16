@@ -70,7 +70,11 @@ export default function Projects() {
             <div className="project-links">
               <a href={"/projects/" + p.slug + "/"}>Project details →</a>
               {p.repo && (
-                <a href={"https://github.com/edisonlovescodes/" + p.repo}>
+                <a
+                  href={"https://github.com/edisonlovescodes/" + p.repo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Source code ↗
                 </a>
               )}
@@ -80,13 +84,25 @@ export default function Projects() {
       </div>
       <div className="other-work">
         <span>More software repositories</span>
-        <a href="https://github.com/edisonlovescodes/courtpulse">
+        <a
+          href="https://github.com/edisonlovescodes/courtpulse"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           CourtPulse ↗
         </a>
-        <a href="https://github.com/edisonlovescodes/sora-whop-app">
+        <a
+          href="https://github.com/edisonlovescodes/sora-whop-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Sora Whop App ↗
         </a>
-        <a href="https://github.com/edisonlovescodes/TweetTracker">
+        <a
+          href="https://github.com/edisonlovescodes/TweetTracker"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           TweetTracker ↗
         </a>
       </div>
