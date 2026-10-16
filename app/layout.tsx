@@ -1,34 +1,29 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const sans = localFont({
+  src: "../public/fonts/DMSans.ttf",
+  variable: "--font-sans",
+  display: "swap",
 });
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "Edison Essien - Biomedical Engineer & AI Developer",
-  description: "Portfolio of Edison Essien, a Biomedical Engineering and Bioinformatics student at Drexel University specializing in AI, machine learning, and healthcare technology.",
+  metadataBase: new URL("https://byedison.com"),
+  title: {
+    default: "Edison Essien — Biomedical Engineering & Software",
+    template: "%s | Edison Essien",
+  },
+  description:
+    "Edison Essien’s biomedical engineering, data and software portfolio. Drexel University, graduating June 2027.",
+  alternates: { canonical: "/" },
 };
-
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body className={sans.variable}>{children}</body>
     </html>
   );
 }

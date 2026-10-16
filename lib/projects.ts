@@ -1,0 +1,114 @@
+export const projects = [
+  {
+    slug: "oncodetect",
+    n: "01",
+    name: "OncoDetect",
+    category: "Machine learning \u00b7 Full-stack software",
+    description:
+      "An image-analysis workspace connecting a packaged neural network to a usable, tested application.",
+    stack: "Python / TensorFlow / FastAPI / React",
+    image: "oncodetect-desktop.jpg",
+    repo: "oncodetect",
+    stat: "23.85M",
+    unit: "model parameters",
+    intro: "Making a model usable is a software problem, too.",
+    body: "OncoDetect brings image intake, model readiness, preprocessing, inference and saved observations into one application. The focus is the complete path from a validated upload to a traceable result.",
+    bullets: [
+      "Integrated a ResNet50-based model with 23,850,113 parameters and 224 \u00d7 224 RGB preprocessing.",
+      "Connected a React interface to FastAPI and SQLite-backed observation history.",
+      "Added 14 API and interface regression tests for uploads, errors, history and workspace reset.",
+    ],
+    boundary:
+      "This is a research and software portfolio project. Model size and passing software tests do not establish clinical accuracy; it is not a diagnostic service.",
+    flow: [
+      "Validate image",
+      "Preprocess crop",
+      "Run model",
+      "Save observation",
+    ],
+  },
+  {
+    slug: "protogen",
+    n: "02",
+    name: "Protogen",
+    category: "Sequence modeling \u00b7 Data engineering",
+    description:
+      "A small causal protein-sequence generator, with careful dataset cleanup and a reproducible experiment.",
+    stack: "Python / PyTorch / FastAPI / React",
+    image: "protogen-desktop.jpg",
+    repo: "protogen",
+    stat: "425 \u2192 85",
+    unit: "rows to unique sequences",
+    intro: "A generation experiment starts with trustworthy data.",
+    body: "Protogen combines dataset preparation, autoregressive sequence generation and an interface for exploring composition controls. The refresh addressed repeated data and causal masking before running a small CPU experiment.",
+    bullets: [
+      "Removed 340 duplicate rows before creating seeded training, validation and test partitions of 68 / 8 / 9 unique sequences.",
+      "Built a 2-layer, 4-head PyTorch generator with five heuristic composition controls and FASTA export.",
+      "Ran a three-epoch CPU experiment against a training-only unigram baseline; added 18 regression tests.",
+    ],
+    boundary:
+      "Composition controls are heuristics. Generated sequences have not been validated for biological function. The small experiment is not evidence of therapeutic or laboratory efficacy.",
+    flow: [
+      "Deduplicate",
+      "Split dataset",
+      "Train causally",
+      "Generate sequence",
+    ],
+  },
+  {
+    slug: "biosignal-analyzer",
+    n: "03",
+    name: "BioSignal Analyzer",
+    category: "Signal processing \u00b7 Scientific software",
+    description:
+      "An ECG analysis workspace for inspecting waveforms, heart rate, variability, spectra and extracted beats.",
+    stack: "Python / SciPy / Streamlit",
+    image: "biosignal-desktop.jpg",
+    repo: "biosignal-analyzer",
+    stat: "5",
+    unit: "interactive analysis views",
+    intro: "Scientific software should make its assumptions visible.",
+    body: "BioSignal Analyzer brings preprocessing and ECG exploration into a single interface. Shared sampling, segmentation and label contracts help keep the analysis consistent from input through visualization.",
+    bullets: [
+      "Implemented 360 Hz preprocessing and complete 187-sample beat windows: 93 samples before the peak and 94 at or after it.",
+      "Built five views for waveform, heart rate, heart-rate variability, spectrum and beat classification.",
+      "Verified 36 regression tests covering filtering, segmentation, readiness and class labels.",
+    ],
+    boundary:
+      "The illustrated runtime check uses a synthetic waveform. Software verification and synthetic checks do not establish patient-level diagnostic performance.",
+    flow: [
+      "Load signal",
+      "Filter waveform",
+      "Extract beats",
+      "Inspect analysis",
+    ],
+  },
+  {
+    slug: "drug-delivery",
+    n: "04",
+    name: "Drug Delivery Modeling",
+    category: "Biomedical engineering \u00b7 Senior design",
+    description:
+      "Ongoing team work on spatial drug-transport modeling for coated intramedullary nails.",
+    stack: "Transport modeling / Requirements / Verification",
+    image: null,
+    repo: null,
+    stat: "5",
+    unit: "members on the design team",
+    intro: "Connecting device geometry to a transport-modeling problem.",
+    body: "As part of a five-member Drexel senior-design team working with DePuy Synthes, I am contributing to the definition of a model for drug transport over space and time from a coated intramedullary nail.",
+    bullets: [
+      "Contributing to design rationale and requirements for release and transport modeling.",
+      "Defining how nail geometry, coating thickness, drug loading and tissue transport enter the modeling problem.",
+      "Developing verification and sensitivity requirements as the project progresses.",
+    ],
+    boundary:
+      "This project is in progress. A completed, validated transport solver or clinical outcome is not claimed. Institutional designs and non-public project materials are not shared here.",
+    flow: [
+      "Define requirements",
+      "Represent transport",
+      "Plan verification",
+      "Study sensitivity",
+    ],
+  },
+];

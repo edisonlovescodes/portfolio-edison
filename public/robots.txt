@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://byedison.com/sitemap.xml

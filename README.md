@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Edison Essien portfolio
 
-## Getting Started
+The refreshed source of the original `portfolio-edison` site. Built with Next.js, React and TypeScript, with self-hosted typography and light/dark themes. The original portfolio's component structure is retained; experience, project descriptions, screenshots and the resume are updated from the October 2026 records.
 
-First, run the development server:
+The source of truth is https://github.com/edisonlovescodes/portfolio-edison. The portfolio is intended to be served at https://byedison.com through the existing Vercel project. Local development and the portable static export also work independently of Vercel.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Run locally
+
+Use Node.js 20.9 or newer and npm:
+
+```sh
+npm ci --ignore-scripts
+npm run dev -- --hostname 127.0.0.1
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open the localhost address printed by Next.js. The application does not call an external API or run machine-learning inference.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build portable website files
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```sh
+npm run build
+python3 -m http.server 3000 --bind 127.0.0.1 --directory out
+```
 
-## Learn More
+The `out/` directory contains static website files. It can be served by a web server you control. Open `http://127.0.0.1:3000` for local inspection; do not double-click an HTML file because root-relative asset paths expect an HTTP server.
 
-To learn more about Next.js, take a look at the following resources:
+GitHub stores the versioned source. Vercel serves the public website and its HTTPS certificate. Namecheap manages the byedison.com registration and DNS.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Content
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `components/`: the original portfolio sections, refreshed with current content.
+- `lib/projects.ts`: four evidence-grounded project profiles.
+- `app/projects/[slug]/page.tsx`: generated project pages.
+- `public/images/`: screenshots of the refreshed software applications.
+- `public/Edison_Essien_Resume.pdf` and `public/resume.pdf`: the current one-page resume.
+- `public/fonts/`: self-hosted typeface and its original license.
 
-## Deploy on Vercel
+The three software project pages link to their repositories and local run instructions. Screenshot previews are not hosted inference services. Drug Delivery Modeling is ongoing senior-design work; private institutional CAD and project documents are excluded. Additional software repositories remain linked without unsupported performance claims.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Canonical URLs use `https://byedison.com`. Source code, package locks, screenshots, fonts and the resume are versioned; generated dependencies and build output are intentionally ignored. Clone this repository to recover the website on another computer.
