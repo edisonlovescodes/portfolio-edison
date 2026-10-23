@@ -71,14 +71,19 @@ export default async function ProjectPage({
             </ul>
             <h3>Reading the results</h3>
             <p>{p.boundary}</p>
+            {p.live && (
+              <a className="button" href={p.live}>
+                Try the live app →
+              </a>
+            )}
             {p.repo && (
               <a
-                className="button"
+                className="text-link"
                 href={"https://github.com/edisonlovescodes/" + p.repo}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Source code & local setup ↗
+                Source code ↗
               </a>
             )}
           </div>

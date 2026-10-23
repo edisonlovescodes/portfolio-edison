@@ -1,6 +1,7 @@
 export const projects = [
   {
     slug: "oncodetect",
+    live: "/oncodetect/",
     n: "01",
     name: "OncoDetect",
     category: "Machine learning \u00b7 Full-stack software",
@@ -29,6 +30,7 @@ export const projects = [
   },
   {
     slug: "protogen",
+    live: "/protogen/",
     n: "02",
     name: "Protogen",
     category: "Sequence modeling \u00b7 Data engineering",
@@ -57,6 +59,7 @@ export const projects = [
   },
   {
     slug: "biosignal-analyzer",
+    live: "/ecg/",
     n: "03",
     name: "BioSignal Analyzer",
     category: "Signal processing \u00b7 Scientific software",

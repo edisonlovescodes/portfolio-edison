@@ -68,6 +68,7 @@ export default function Projects() {
               <span>{p.unit}</span>
             </div>
             <div className="project-links">
+              {p.live && <a href={p.live}>Try it live →</a>}
               <a href={"/projects/" + p.slug + "/"}>Project details →</a>
               {p.repo && (
                 <a
