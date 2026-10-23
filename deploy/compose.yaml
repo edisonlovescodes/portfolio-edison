@@ -1,0 +1,38 @@
+# byedison.com: one server, one router (Caddy), one container per live app.
+# Static sites live in ../www and are served by Caddy directly.
+services:
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports: ["80:80", "443:443"]
+    environment:
+      SITE_ADDRESS: ${SITE_ADDRESS}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ../www:/srv/www:ro
+      - caddy_data:/data
+      - caddy_config:/config
+
+  oncodetect:
+    build: ../oncodetect/backend
+    restart: unless-stopped
+    environment:
+      ONCODETECT_DATA_DIR: /app/data
+
+  protogen:
+    build:
+      context: ../protogen
+      dockerfile: /srv/byedison/deploy/protogen.Dockerfile
+    restart: unless-stopped
+
+  ecg:
+    build: ../biosignal-analyzer
+    restart: unless-stopped
+    environment:
+      STREAMLIT_SERVER_BASE_URL_PATH: ecg
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8501/ecg/_stcore/health')"]
+
+volumes:
+  caddy_data:
+  caddy_config:

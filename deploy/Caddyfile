@@ -1,0 +1,47 @@
+# SITE_ADDRESS is ":80" while testing by IP, then "byedison.com" for automatic HTTPS.
+www.byedison.com {
+	redir https://byedison.com{uri} 308
+}
+
+{$SITE_ADDRESS} {
+	encode zstd gzip
+
+	# OncoDetect: shared upload history stays private until it is per-visitor.
+	handle_path /oncodetect/api/* {
+		@private path /predictions* /stats*
+		respond @private 404
+		reverse_proxy oncodetect:8000
+	}
+	redir /oncodetect /oncodetect/ 308
+	handle_path /oncodetect/* {
+		root * /srv/www/oncodetect
+		try_files {path} /index.html
+		file_server
+	}
+
+	handle_path /protogen/api/* {
+		reverse_proxy protogen:8000
+	}
+	redir /protogen /protogen/ 308
+	handle_path /protogen/* {
+		root * /srv/www/protogen
+		try_files {path} /index.html
+		file_server
+	}
+
+	redir /ecg /ecg/ 308
+	handle /ecg/* {
+		reverse_proxy ecg:8501
+	}
+
+	# Portfolio (static Next.js export). New demos: add a block above this one.
+	handle {
+		root * /srv/www/site
+		file_server
+	}
+	handle_errors 404 {
+		root * /srv/www/site
+		rewrite * /404.html
+		file_server
+	}
+}
