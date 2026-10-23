@@ -12,6 +12,7 @@ www/protogen/        Protogen frontend: vite build --base=/protogen/, VITE_API_B
 oncodetect/backend/  github.com/edisonlovescodes/oncodetect, backend folder
 protogen/            github.com/edisonlovescodes/protogen, plus runs/latest (not in git)
 biosignal-analyzer/  github.com/edisonlovescodes/biosignal-analyzer
+data/mit-bih/        MIT-BIH record 100 (100.hea, 100.dat) from physionet.org/files/mitdb/1.0.0, ODC-BY 1.0
 ```
 
 Start or update: `cd /srv/byedison/deploy && docker compose up -d --build`

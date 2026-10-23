@@ -30,6 +30,9 @@ services:
     restart: unless-stopped
     environment:
       STREAMLIT_SERVER_BASE_URL_PATH: ecg
+    volumes:
+      # MIT-BIH record 100 (physionet.org/files/mitdb/1.0.0), ODC-BY 1.0.
+      - ../data/mit-bih:/app/data/mit-bih:ro
     healthcheck:
       test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8501/ecg/_stcore/health')"]
 
