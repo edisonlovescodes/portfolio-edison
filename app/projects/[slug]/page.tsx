@@ -63,13 +63,13 @@ export default async function ProjectPage({
           </div>
           <div>
             <p>{p.body}</p>
-            <h3>Implementation & scope</h3>
+            <h3>How it&apos;s built</h3>
             <ul>
               {p.bullets.map((b) => (
                 <li key={b}>{b}</li>
               ))}
             </ul>
-            <h3>Reading the results</h3>
+            <h3>Limits</h3>
             <p>{p.boundary}</p>
             <div className="hero-actions">
               {p.live && (

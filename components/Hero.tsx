@@ -12,12 +12,13 @@ export default function Hero() {
         <span className="code-bracket">{" />"}</span>
       </h1>
       <p className="hero-role">
-        Biomedical engineering student & software builder
+        Biomedical engineering student who builds software for health and biology
       </p>
       <div className="hero-bottom">
         <p>
-          I connect biomedical engineering with code—from manufacturing process
-          data to scientific software and assistive technology.
+          This is my portfolio. Below are three apps I built that you can use
+          right now in your browser: a lung-nodule image classifier, a
+          protein-sequence generator and a heart-signal (ECG) analyzer.
         </p>
         <div>
           <p className="availability">
@@ -28,7 +29,7 @@ export default function Hero() {
       </div>
       <div className="hero-actions">
         <a className="button" href="#projects">
-          Explore projects ↓
+          See the apps ↓
         </a>
         <a className="text-link" href="#contact">
           Get in touch ↗

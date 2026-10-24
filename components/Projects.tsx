@@ -6,12 +6,11 @@ export default function Projects() {
       <div className="section-heading">
         <div>
           <p className="eyebrow">{"01 / > Projects.log"}</p>
-          <h2>From data to working software.</h2>
+          <h2>Projects you can try</h2>
         </div>
         <p>
-          Biomedical questions.
-          <br />
-          Concrete implementations.
+          The first three run live on this site. Click &ldquo;Try it live&rdquo; to
+          use one, or &ldquo;Project details&rdquo; to see how it works.
         </p>
       </div>
       <div className="project-grid">
