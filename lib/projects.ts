@@ -20,7 +20,7 @@ export const projects = [
       "Added 14 API and interface regression tests for uploads, errors, history and workspace reset.",
     ],
     boundary:
-      "This is a research and software portfolio project. Model size and passing software tests do not establish clinical accuracy; it is not a diagnostic service.",
+      "This is a research and software portfolio project, not a diagnostic service. In an October 2026 spot check on 33 nodule crops from two public LIDC-IDRI scans, the model labeled only 2 of the 14 crops that radiologists rated suspicious (4 or 5 out of 5) as malignant. Treat it as an engineering project, not an accurate classifier.",
     flow: [
       "Validate image",
       "Preprocess crop",
